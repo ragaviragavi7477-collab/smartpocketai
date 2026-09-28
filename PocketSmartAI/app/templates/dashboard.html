@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PocketSmart AI</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <div class="nav-logo"><img src="/static/img/logo.png" alt="PocketSmart AI logo"></div>
+            <span class="nav-brand-text">PocketSmart AI</span>
+        </a>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-planner">Home Planner</a></li>
+            <li><a href="/party-planner">Party Planner</a></li>
+            <li><a href="/jewelry-planner">Jewelry</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="dashboard">
+            <h2>Welcome, <span id="username">User</span>!</h2>
+            <p class="welcome-text">Your Smart Budget Assistant is ready. Choose a planner below to get started.</p>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Home Interior</h3>
+                    <p>Plan your dream home within budget with AI-powered recommendations from IKEA, Amazon, and more.</p>
+                    <a href="/home-planner" class="btn btn-primary">Start Planning</a>
+                </div>
+                <div class="card">
+                    <h3>Party Planning</h3>
+                    <p>Organize the perfect event with smart budget allocation across catering, decor, and venues.</p>
+                    <a href="/party-planner" class="btn btn-secondary">Start Planning</a>
+                </div>
+                <div class="card">
+                    <h3>Jewelry</h3>
+                    <p>Find the perfect piece for any occasion with style-matched jewelry suggestions.</p>
+                    <a href="/jewelry-planner" class="btn btn-accent">Start Browsing</a>
+                </div>
+            </div>
+            <div class="history-section">
+                <h2>Recent Recommendations</h2>
+                <div id="recentHistory"><p style="text-align:center;padding:2rem">No history yet. Start planning!</p></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">PocketSmart AI</div>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo(0,0)">↑</button>
+    <script src="/static/js/main.js"></script>
+    <script>
+        try {
+            const u = JSON.parse(localStorage.getItem('user') || '{}');
+            if (u.username) document.getElementById('username').textContent = u.username;
+        } catch (e) {}
+    </script>
+</body>
+</html>

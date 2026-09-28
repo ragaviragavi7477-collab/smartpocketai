@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PocketSmart AI</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <div class="nav-logo"><img src="/static/img/logo.png" alt="PocketSmart AI logo"></div>
+            <span class="nav-brand-text">PocketSmart AI</span>
+        </a>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-planner">Home Planner</a></li>
+            <li><a href="/party-planner">Party Planner</a></li>
+            <li><a href="/jewelry-planner">Jewelry</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/login" class="active">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="form-container">
+            <div class="form-card">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Login to access your personalized recommendations</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Login</button>
+                </form>
+                <p class="auth-link">Don't have an account? <a href="/register">Create one here</a></p>
+                <div id="loginError" class="error" style="display:none"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">PocketSmart AI</div>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo(0,0)">↑</button>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

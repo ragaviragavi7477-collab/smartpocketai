@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation History - PocketSmart AI</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <div class="nav-logo"><img src="/static/img/logo.png" alt="PocketSmart AI logo"></div>
+            <span class="nav-brand-text">PocketSmart AI</span>
+        </a>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-planner">Home Planner</a></li>
+            <li><a href="/party-planner">Party Planner</a></li>
+            <li><a href="/jewelry-planner">Jewelry</a></li>
+            <li><a href="/history" class="active">History</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="page-section">
+            <h2>📜 Recommendation History</h2>
+            <p>View all your past recommendation queries and results in one place.</p>
+            <div id="historyContainer"></div>
+            <div class="loading" id="historyLoading">Loading your history...</div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">PocketSmart AI</div>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo(0,0)">↑</button>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

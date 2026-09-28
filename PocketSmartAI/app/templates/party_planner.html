@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - PocketSmart AI</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <div class="nav-logo"><img src="/static/img/logo.png" alt="PocketSmart AI logo"></div>
+            <span class="nav-brand-text">PocketSmart AI</span>
+        </a>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-planner">Home Planner</a></li>
+            <li><a href="/party-planner" class="active">Party Planner</a></li>
+            <li><a href="/jewelry-planner">Jewelry</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="form-container">
+            <div class="form-card">
+                <h2>Party Budget Planner</h2>
+                <p class="subtitle">Plan the perfect event with smart budget allocation</p>
+                <form id="partyForm">
+                    <div class="form-group">
+                        <label>Budget (₹)</label>
+                        <input type="number" id="budget" name="budget" required min="1" step="0.01" placeholder="e.g., 500">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Guests</label>
+                        <input type="number" id="guest_count" name="guest_count" required min="1" placeholder="e.g., 20">
+                    </div>
+                    <div class="form-group">
+                        <label>Event Type</label>
+                        <select id="event_type" name="event_type" required>
+                            <option value="birthday">Birthday</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="baby_shower">Baby Shower</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Venue</label>
+                        <input type="text" id="venue" name="venue" placeholder="e.g., Home, Garden, Venue Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Preferences</label>
+                        <textarea id="preferences" name="preferences" rows="3" placeholder="e.g., Theme colors, dietary restrictions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Get Recommendations</button>
+                </form>
+                <div id="partyResults" class="results-section"></div>
+                <div id="partyLoading" class="loading" style="display:none">
+                    <div class="spinner"></div>
+                    <p>Analyzing your party needs with AI...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">PocketSmart AI</div>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo(0,0)">↑</button>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

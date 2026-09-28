@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Planner - PocketSmart AI</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <div class="nav-logo"><img src="/static/img/logo.png" alt="PocketSmart AI logo"></div>
+            <span class="nav-brand-text">PocketSmart AI</span>
+        </a>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-planner" class="active">Home Planner</a></li>
+            <li><a href="/party-planner">Party Planner</a></li>
+            <li><a href="/jewelry-planner">Jewelry</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="form-container">
+            <div class="form-card">
+                <h2>Home Interior Budget Planner</h2>
+                <p class="subtitle">Tell us your preferences and we'll find the perfect products</p>
+                <form id="homeForm">
+                    <div class="form-group">
+                        <label>Budget (₹)</label>
+                        <input type="number" id="budget" name="budget" required min="1" step="0.01" placeholder="e.g., 500">
+                    </div>
+                    <div class="form-group">
+                        <label>Room Type</label>
+                        <select id="room_type" name="room_type" required>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Bedroom">Bedroom</option>
+                            <option value="Bathroom">Bathroom</option>
+                            <option value="Home Office">Home Office</option>
+                            <option value="Dining Room">Dining Room</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Rooms</label>
+                        <input type="number" id="room_quantity" name="room_quantity" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Lights</label>
+                        <input type="number" id="lights_count" name="lights_count" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Ceiling Fans</label>
+                        <input type="number" id="ceiling_fans" name="ceiling_fans" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Dining Tables</label>
+                        <input type="number" id="dining_tables" name="dining_tables" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Preferences</label>
+                        <textarea id="preferences" name="preferences" rows="3" placeholder="e.g., Modern style, eco-friendly materials..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Get Recommendations</button>
+                </form>
+                <div id="homeResults" class="results-section"></div>
+                <div id="homeLoading" class="loading" style="display:none">
+                    <div class="spinner"></div>
+                    <p>Analyzing your budget with AI...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">PocketSmart AI</div>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo(0,0)">↑</button>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
